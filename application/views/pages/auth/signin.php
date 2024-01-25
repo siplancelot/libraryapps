@@ -27,28 +27,32 @@
 			<div class="card-body login-card-body">
 				<p class="login-box-msg">Sign in to start your session</p>
 
-				<form action="<?= base_url() ?>assets/index3.html" method="post">
-					<div class="input-group mb-3">
-						<input type="email" class="form-control" placeholder="Email">
+				<?= $this->session->flashdata('message');?>
+
+				<form action="<?= base_url('auth/signin') ?>" method="post">
+					<div class="input-group mt-3">
+						<input type="email" class="form-control" placeholder="Email" name="email"  value="<?= set_value('email'); ?>">
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
 					</div>
-					<div class="input-group mb-3">
-						<input type="password" class="form-control" placeholder="Password">
+					<?= form_error('email', '<small class="text-danger">', '</small>') ;?>
+					<div class="input-group mt-3">
+						<input type="password" class="form-control" placeholder="Password" name="password"  value="<?= set_value('password'); ?>">
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-lock"></span>
 							</div>
 						</div>
 					</div>
+					<?= form_error('password', '<small class="text-danger">', '</small>') ;?>
 					<div class="row">
 
 						<!-- /.col -->
-						<div class="col-12">
-							<button type="submit" class="btn btn-primary btn-block">Sign In</button>
+						<div class="col-12 mt-2">
+							<input type="submit" class="btn btn-primary btn-block" value="Sign In">
 						</div>
 						<!-- /.col -->
 					</div>

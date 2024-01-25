@@ -26,41 +26,50 @@
 			<div class="card-body">
 				<p class="login-box-msg">Daftar Akun Baru</p>
 
-				<form action="#" method="post">
-					<div class="input-group mb-3">
-						<input type="text" class="form-control" placeholder="Full name">
+				<?= $this->session->flashdata('message');?>
+
+				<form action="<?= base_url('auth/signup') ;?>" method="post">
+					<div class="input-group mb-2">
+						<input type="text" class="form-control" placeholder="Full name" name="fullname" value="<?= set_value('fullname'); ?>">
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-user"></span>
 							</div>
 						</div>
+						
 					</div>
-					<div class="input-group mb-3">
-						<input type="email" class="form-control" placeholder="Email">
+					<?= form_error('fullname', '<small class="text-danger">', '</small>') ;?>
+					<div class="input-group mb-2">
+						<input type="email" class="form-control" placeholder="Email" name="email" value="<?= set_value('email'); ?>">
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-envelope"></span>
 							</div>
 						</div>
+						
 					</div>
-					<div class="input-group mb-3">
-						<input type="password" class="form-control" placeholder="Password">
+					<?= form_error('email', '<small class="text-danger">', '</small>') ;?>
+					<div class="input-group mb-2">
+						<input type="password" class="form-control" placeholder="Password" name="password1" value="<?= set_value('password1'); ?>">
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-lock"></span>
+							</div>
+						</div>
+						
+					</div>
+					<?= form_error('password1', '<small class="text-danger">', '</small>') ;?>
+					<div class="input-group mb-2">
+						<input type="password" class="form-control" placeholder="Retype password" name="password2" value="<?= set_value('password2'); ?>">
 						<div class="input-group-append">
 							<div class="input-group-text">
 								<span class="fas fa-lock"></span>
 							</div>
 						</div>
 					</div>
-					<div class="input-group mb-3">
-						<input type="password" class="form-control" placeholder="Retype password">
-						<div class="input-group-append">
-							<div class="input-group-text">
-								<span class="fas fa-lock"></span>
-							</div>
-						</div>
-					</div>
+					<?= form_error('password2', '<small class="text-danger">', '</small>') ;?>
 					<div class="col-12">
-						<button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+						<input type="submit" class="btn btn-primary btn-block" value="Sign Up">
 					</div>
 				</form>
 

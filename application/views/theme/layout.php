@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="<?= base_url() ;?>assets/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="<?= base_url() ;?>assets/plugins/summernote/summernote-bs4.min.css">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" >
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -61,6 +63,12 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
+</script>
+
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+<script>
+  let table = new DataTable('#myTable');
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url() ;?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
