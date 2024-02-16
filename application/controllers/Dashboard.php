@@ -10,9 +10,7 @@ class Dashboard extends CI_Controller {
 		if (!$this->session->userdata('email')) {
 			redirect('auth/signin');
 		}
-	
-    
-    
+
   }
 
 	public function index()
