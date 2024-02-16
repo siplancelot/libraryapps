@@ -21,7 +21,6 @@ class Dashboard extends CI_Controller {
       'page' => "pages/dashboard"
     );
 
-
 		$this->load->view('theme/layout', $data);
 	}
 }
